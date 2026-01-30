@@ -17,7 +17,7 @@ fetch("questions.json")
   });
 
 function startQuiz() {
-  questions = shuffle([...allQuestions]).slice(0, 5);
+  questions = shuffle([...allQuestions]).slice(0, 10);
   index = 0;
   score = 0;
   showQuestion();
@@ -118,9 +118,9 @@ function updateProgress() {
 
 function endQuiz() {
   soundFinish.play();
-  let mention = score >= 4 ? "🏆 Excellent" :
-                score >= 3 ? "👍 Très bien" :
-                score >= 2 ? "🙂 Bien" : "😅 À améliorer";
+  let mention = score >= 8 ? "🏆 Excellent" :
+                score >= 6 ? "👍 Très bien" :
+                score >= 5 ? "🙂 Bien" : "😅 À améliorer";
 
   document.querySelector(".quiz-container").innerHTML = `
     <h2>Quiz terminé 🎉</h2>
