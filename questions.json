@@ -98,5 +98,10 @@
     "question": "Lequel de ces arbres est connu pour sa grande longévité ?",
     "choices": ["Chêne", "Séquoia", "Bouleau", "Palmier"],
     "answer": 1
+  },
+  {
+   "question": "En Qeulle année la RDC avait eu son Indépendance ?",
+    "choices": ["1960", "1954", "1966", "1961"],
+    "answer": 0
   }
 ]
