@@ -1,13 +1,20 @@
+const cacheName = "quiz-cache-v1";
+const assets = [
+  "./",
+  "./index.html",
+  "./style.css",
+  "./script.js",
+  "./questions.json"
+];
+
 self.addEventListener("install", e => {
   e.waitUntil(
-    caches.open("quiz-cache").then(cache =>
-      cache.addAll([
-        "./",
-        "./index.html",
-        "./style.css",
-        "./script.js",
-        "./questions.json"
-      ])
-    )
+    caches.open(cacheName).then(cache => cache.addAll(assets))
+  );
+});
+
+self.addEventListener("fetch", e => {
+  e.respondWith(
+    caches.match(e.request).then(res => res || fetch(e.request))
   );
 });

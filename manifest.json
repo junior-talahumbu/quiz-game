@@ -1,9 +1,20 @@
 {
-  "name": "Quiz Game RDC",
-  "short_name": "QuizRDC",
-  "start_url": ".",
+  "name": "Quiz Culture Générale",
+  "short_name": "Quiz RDC",
+  "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#020617",
-  "theme_color": "#2563eb",
-  "icons": []
+  "background_color": "#0f172a",
+  "theme_color": "#22c55e",
+  "icons": [
+    {
+      "src": "screenshot.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "screenshot.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }
