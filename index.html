@@ -1,24 +1,35 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quiz Game</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#22c55e">
 
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#22c55e" />
+
+  <!-- Icône -->
+  <link rel="icon" href="icons/icon-192.png">
 </head>
 <body>
 
-<div class="quiz-container">
+<!-- 🔄 LOADER -->
+<div id="loader">
+  <img src="icons/icon-192.png" alt="Quiz Icon" class="loader-icon">
+  <h2>Quiz Game</h2>
+  <p>Chargement...</p>
+</div>
+
+<!-- 🎮 QUIZ -->
+<div class="quiz-container hidden">
   <div class="top">
     <span id="timer">⏱️ 10</span>
-    <center> <H2 color="Red">Quiz-Game</H2></center>
+    <h2 class="title">Quiz Game</h2>
     <span id="score">Score : 0</span>
   </div>
 
-  <h2 id="question">Chargement...</h2>
+  <h3 id="question">Chargement...</h3>
   <div id="choices"></div>
 
   <div class="progress">
@@ -27,5 +38,16 @@
 </div>
 
 <script src="script.js"></script>
+
+<script>
+  // Affichage loader → quiz
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      document.getElementById("loader").style.display = "none";
+      document.querySelector(".quiz-container").classList.remove("hidden");
+    }, 1500);
+  });
+</script>
+
 </body>
 </html>

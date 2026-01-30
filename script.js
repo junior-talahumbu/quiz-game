@@ -124,7 +124,7 @@ function endQuiz() {
 
   document.querySelector(".quiz-container").innerHTML = `
     <h2>Quiz terminé 🎉</h2>
-    <p>Score : ${score}/5</p>
+    <p>Score : ${score}/10</p>
     <h3>${mention}</h3>
     <button onclick="location.reload()">Rejouer 🔄</button>
   `;
