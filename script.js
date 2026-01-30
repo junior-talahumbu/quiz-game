@@ -134,7 +134,7 @@ function endQuiz() {
     badgeClass = "bien";
     badgeEmoji = "👍";
   } else {
-    mention = "À améliorer";
+    mention = "À améliorer votre capacité";
     badgeClass = "ameliorer";
     badgeEmoji = "😅";
   }
