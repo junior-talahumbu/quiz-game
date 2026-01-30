@@ -118,12 +118,30 @@ function updateProgress() {
 
 function endQuiz() {
   soundFinish.play();
-  let mention = score >= 8 ? "🏆 Excellent" :
-                score >= 6 ? "👍 Très bien" :
-                score >= 5 ? "🙂 Bien" : "😅 À améliorer";
+
+  let mention, badgeClass, badgeEmoji;
+
+  if(score >= 8) {
+    mention = "Excellent";
+    badgeClass = "excellent";
+    badgeEmoji = "🏆";
+  } else if(score >= 6) {
+    mention = "Très bien";
+    badgeClass = "tresbien";
+    badgeEmoji = "🥇";
+  } else if(score >= 5) {
+    mention = "Bien";
+    badgeClass = "bien";
+    badgeEmoji = "👍";
+  } else {
+    mention = "À améliorer";
+    badgeClass = "ameliorer";
+    badgeEmoji = "😅";
+  }
 
   document.querySelector(".quiz-container").innerHTML = `
     <div class="end-quiz">
+      <span class="badge ${badgeClass}">${badgeEmoji}</span>
       <h2>Quiz terminé 🎉</h2>
       <p>Score : ${score}/10</p>
       <h3>${mention}</h3>
@@ -131,6 +149,7 @@ function endQuiz() {
     </div>
   `;
 }
+
 
 function shuffle(arr) {
   return arr.sort(() => Math.random() - 0.5);
